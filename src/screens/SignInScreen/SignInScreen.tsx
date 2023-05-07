@@ -4,19 +4,28 @@ import Logo from '../../../assets/images/maharlikaMain.png';
 import CustomInput from "../../components/CustomInput";
 import {ImageButtonFb, ImageButtonGl} from "../../components/ImageButton";
 import { PrimaryButton, ForgetButton, SignUpButton } from "../../components/CustomButton";
+import { useSignIn } from "@clerk/clerk-expo";
 import { useNavigation } from "@react-navigation/native";
 
 const SignInScreen = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const { signIn, setActive, isLoaded } = useSignIn();
+    const [emailAddress, setEmailAddress] = React.useState('');
+    const [password, setPassword] = React.useState('');
     const {height} = useWindowDimensions();
     const navigation = useNavigation();
-    const onSignInPressed = () => {
-        //backend validation
-        navigation.navigate('LandingPage');
-    }
-    const onSignUpPressed = () => {
-        navigation.navigate('SignUp')
+
+    const onSignInPress = async () => {
+        if (!isLoaded){
+            return;
+        }
+        try {
+            const completeSignIn = await signIn.create({
+                identifier: emailAddress, password,
+            });
+        await setActive({ session: completeSignIn.createdSessionId});
+        } catch (err: any){
+            console.error(JSON.stringify(err, null, 2));
+        }
     }
 
     const onFacebookPressed = () => {
@@ -27,6 +36,9 @@ const SignInScreen = () => {
     }
     const onForgotPasswordPressed = () => {
         navigation.navigate('ForgetPassword')
+    }
+    const onCreateAccountPressed = () => {
+        navigation.navigate('SignUp')
     }
 
     return(
@@ -40,13 +52,13 @@ const SignInScreen = () => {
                 <Text style={styles.login}>Sign in</Text>
                 <CustomInput 
                     placeholder='Email' 
-                    value={email} 
-                    setValue={setEmail} 
+                    value={emailAddress} 
+                    setValue={(emailAddress) => setEmailAddress(emailAddress)} 
                 />
                 <CustomInput 
                     placeholder='Password' 
                     value={password} 
-                    setValue={setPassword} 
+                    setValue={(password) => setPassword(password)} 
                     secureTextEntry={true}
                 />
                 <ForgetButton 
@@ -55,11 +67,11 @@ const SignInScreen = () => {
                 />
                 <PrimaryButton 
                     text="LOGIN" 
-                    onPress={onSignInPressed} 
+                    onPress={onSignInPress} 
                 />
                 <SignUpButton 
                     text="Don't have an account? Create one."
-                    onPress={onSignUpPressed}
+                    onPress={onCreateAccountPressed}
                 />
                 <Text style = {styles.signInSocial}>Or sign in with a social account</Text>
                 <View style={styles.icons}>
@@ -109,4 +121,3 @@ const styles = StyleSheet.create({
 });
 
 export default SignInScreen
-
