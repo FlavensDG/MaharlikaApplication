@@ -1,17 +1,12 @@
 import React, {useState} from "react";
 import { View, Text, Image, StyleSheet, useWindowDimensions, ScrollView } from 'react-native';
 import Logo from '../../../assets/images/maharlikaMain.png';
-import { ImageButtonFb, ImageButtonGl } from "../../components/ImageButton";
 import CustomInput from "../../components/CustomInput";
 import { PrimaryButton, ForgetButton, SignUpButton } from "../../components/CustomButton";
+import { useSignIn } from "@clerk/clerk-expo";
 
 const ForgotPasswordScreen = () => {
-    const[username, setUsername] = useState('');
     const[email, setEmail] = useState('');
-    const[password, setPassword] = useState('');
-    const onExistingAccountPressed = () => {
-        console.warn('Go to Sign In Screen');
-    }
 
     const onSendPressed = () => {
         console.warn('Request Sent');

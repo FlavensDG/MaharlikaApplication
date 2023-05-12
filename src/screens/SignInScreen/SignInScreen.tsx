@@ -28,12 +28,6 @@ const SignInScreen = () => {
         }
     }
 
-    const onFacebookPressed = () => {
-        console.warn('Signing in with Facebook');
-    }
-    const onGooglePressed = () => {
-        console.warn('Signing in with Google');
-    }
     const onForgotPasswordPressed = () => {
         navigation.navigate('ForgetPassword')
     }
@@ -76,13 +70,10 @@ const SignInScreen = () => {
                 <Text style = {styles.signInSocial}>Or sign in with a social account</Text>
                 <View style={styles.icons}>
                     <ImageButtonFb 
-                        onPress={onFacebookPressed}
                     />
                     <ImageButtonGl 
-                        onPress={onGooglePressed}
                     />
                 </View>
-
             </View>
         </ScrollView>
     )

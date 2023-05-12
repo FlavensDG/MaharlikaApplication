@@ -1,14 +1,39 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image} from "react-native";
+import * as WebBrowser from "expo-web-browser";
+import { useOAuth } from "@clerk/clerk-expo";
+import { useWarmUpBrowser } from "../OAuth/OAuth";
 
 type ImageProp = {
     onPress;
     text: string;
 };
 
+WebBrowser.maybeCompleteAuthSession();
+
 const ImageButtonFb = (props:ImageProp) => {
+
+    useWarmUpBrowser();
+
+      const { startOAuthFlow } = useOAuth({ strategy: "oauth_facebook" });
+
+      const onFacebookPress = React.useCallback(async () => {
+        try {
+          const { createdSessionId, signIn, signUp, setActive } =
+            await startOAuthFlow();
+
+          if (createdSessionId) {
+            setActive({ session: createdSessionId });
+          } else {
+            // Use signIn or signUp for next steps such as MFA
+          }
+        } catch (err) {
+          console.error("OAuth error", err);
+        }
+      }, []);
+    
     return(
-        <TouchableOpacity onPress = {props.onPress} style={[styles.container]}>
+        <TouchableOpacity onPress = {onFacebookPress} style={[styles.container]}>
             <Image 
                 style={styles.logo}
                 source={require('../../../assets/images/Facebook-logo.png')}
@@ -18,8 +43,28 @@ const ImageButtonFb = (props:ImageProp) => {
 }
 
 const ImageButtonGl = (props:ImageProp) => {
+
+    useWarmUpBrowser();
+
+      const { startOAuthFlow } = useOAuth({ strategy: "oauth_google" });
+
+      const onGooglePress = React.useCallback(async () => {
+        try {
+          const { createdSessionId, signIn, signUp, setActive } =
+            await startOAuthFlow();
+
+          if (createdSessionId) {
+            setActive({ session: createdSessionId });
+          } else {
+            // Use signIn or signUp for next steps such as MFA
+          }
+        } catch (err) {
+          console.error("OAuth error", err);
+        }
+      }, []);
+
     return(
-        <TouchableOpacity onPress = {props.onPress} style={[styles.container]}>
+        <TouchableOpacity onPress = {onGooglePress} style={[styles.container]}>
             <Image 
                 style={styles.logo}
                 source={require('../../../assets/images/google-logo.png')}
