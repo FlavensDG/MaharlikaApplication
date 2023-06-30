@@ -102,6 +102,11 @@ const SignUpScreen = () => {
                     onPress={onGooglePressed}
                     />
                 </View>
+                <Text></Text>
+                <Text></Text>
+                <Text></Text>
+                <Text></Text>
+                <Text></Text>
             </View>
         )}
         {pendingVerification && (
@@ -131,6 +136,7 @@ const styles = StyleSheet.create({
     root: {
         backgroundColor: '#ffff',
         alignItems: 'center',
+        paddingHorizontal: 30,
     },
     root2: {
         backgroundColor: '#ffff',
@@ -148,7 +154,6 @@ const styles = StyleSheet.create({
         fontWeight: 800,
         color: '#424106',
         alignSelf: 'flex-start',
-        marginLeft: 30,
         marginVertical: 10,
     },
     signUpSocial: {

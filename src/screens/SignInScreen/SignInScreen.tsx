@@ -38,7 +38,7 @@ const SignInScreen = () => {
     return(
         <ScrollView showsVerticalScrollIndicator={false}>
             <View style={styles.root}>
-                <Image style 
+                <Image 
                     source={Logo} 
                     style={[styles.logo]} 
                     resizeMode="contain"
@@ -74,6 +74,9 @@ const SignInScreen = () => {
                     <ImageButtonGl 
                     />
                 </View>
+                <Text></Text>
+                <Text></Text>
+                <Text></Text>
             </View>
         </ScrollView>
     )
@@ -83,19 +86,19 @@ const styles = StyleSheet.create({
     logo: {
         alignSelf: 'center',
         alignItems: 'center',
-        height: 270,
+        height: 250,
         width: 500,
     },
     root: {
         backgroundColor: '#ffff',
         alignItems: 'center',
+        paddingHorizontal: 30,
     },
     login: {
         fontSize: 30,
         fontWeight: 800,
         color: '#424106',
         alignSelf: 'flex-start',
-        marginLeft: 30,
 
         marginVertical: 10,
     },

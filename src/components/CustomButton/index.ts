@@ -1,1 +1,1 @@
-export { PrimaryButton, ForgetButton, SignUpButton } from './CustomButton';
+export { PrimaryButton, RectangleButton ,ForgetButton, SignUpButton, SemiRectangleButton } from './CustomButton';

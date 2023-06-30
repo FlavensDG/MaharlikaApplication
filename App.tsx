@@ -1,12 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, SafeAreaView, View } from 'react-native';
-import SignInScreen from './src/screens/SignInScreen';
-import SignUpScreen from './src/screens/SignUpScreen';
-import ForgotPasswordScreen from './src/screens/ForgotPasswordScreen';
 import { ClerkProvider, SignedIn, SignedOut, useAuth } from '@clerk/clerk-expo';
-import Navigation from './src/navigation';
+import {Navigation, NavigationOnSignIn} from './src/navigation';
 import * as SecureStore from "expo-secure-store";
 import { PrimaryButton } from './src/components/CustomButton';
+import { useNavigation } from '@react-navigation/native';
+import HomeScreen from './src/screens/HomeScreen';
+import ProductScreen from './src/screens/ProductScreen';
+import ShoppingCartScreen from './src/screens/ShoppingCartScreen';
+import AddressScreen from './src/screens/AddressScreen';
 
 const CLERK_PUBLISHABLE_KEY = "";
 
@@ -32,6 +34,7 @@ const SignOut = () => {
   if (!isLoaded) {
     return null;
   }
+
   return (
     <View style={styles.signOutPos}>
       <PrimaryButton
@@ -44,15 +47,13 @@ const SignOut = () => {
   );
 };
 
+
 export default function App() {
   return (
     <ClerkProvider publishableKey={CLERK_PUBLISHABLE_KEY}>
         <SafeAreaView style={styles.container}>
             <SignedIn>
-                <View style={styles.textContainer}>
-                    <Text>Hi user. You are now Signed In</Text>
-                </View>
-                <SignOut />
+                <NavigationOnSignIn />
             </SignedIn>
             <SignedOut>
                 <Navigation />
@@ -67,7 +68,6 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
     flex: 1,
-    justifyContent: 'center',
   },
   loginText: {
     alignItems: 'center',

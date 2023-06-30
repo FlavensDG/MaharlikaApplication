@@ -9,6 +9,22 @@ const PrimaryButton = ({onPress, text}) => {
     )
 }
 
+const RectangleButton = ({onPress, text}) => {
+    return(
+        <TouchableOpacity onPress={onPress} style={[styles.containerRectangle]}>
+            <Text style={[styles.textRectangle]}>{text}</Text>
+        </TouchableOpacity>
+    )
+}
+
+const SemiRectangleButton = ({onPress, text}) => {
+    return(
+        <TouchableOpacity onPress={onPress} style={[styles.containerSemiRectangle]}>
+            <Text style={[styles.textSemiRectangle]}>{text}</Text>
+        </TouchableOpacity>
+    )
+}
+
 const ForgetButton = ({onPress, text}) => {
     return(
         <Pressable onPress = {onPress} style = {[styles.containerForget]}>
@@ -29,7 +45,7 @@ const styles = StyleSheet.create({
     containerPrimary: {
         backgroundColor: '#424106',
         height: 45,
-        width: 300,
+        width: '100%',
 
         marginVertical: 10,
         borderRadius: 100,
@@ -41,9 +57,37 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 15,
     },
+    containerRectangle: {
+        backgroundColor: '#424106',
+        height: 45,
+        width: 320,
+
+        marginVertical: 10,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    textRectangle: {
+        color: '#ffff',
+        fontWeight: 'bold',
+        fontSize: 15,
+    },
+    containerSemiRectangle: {
+        backgroundColor: '#424106',
+        height: 45,
+        width: 320,
+
+        marginVertical: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 10,
+    },
+    textSemiRectangle: {
+        color: '#ffff',
+        fontWeight: 'bold',
+        fontSize: 15,
+    },
     containerForget: {
         alignSelf: "flex-end",
-        marginRight: 30,
         marginVertical: 10,
     },
     textForget: {
@@ -63,4 +107,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export {PrimaryButton, ForgetButton, SignUpButton};
+export {PrimaryButton, SemiRectangleButton, RectangleButton, ForgetButton, SignUpButton};

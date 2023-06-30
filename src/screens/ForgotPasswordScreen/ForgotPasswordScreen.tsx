@@ -34,6 +34,18 @@ const ForgotPasswordScreen = () => {
                     text='SEND'
                     onPress={onSendPressed}
                 />
+                <Text></Text>
+                <Text></Text>
+                <Text></Text>
+                <Text></Text>
+                <Text></Text>
+                <Text></Text>
+                <Text></Text>
+                <Text></Text>
+                <Text></Text>
+                <Text></Text>
+                <Text></Text>
+                <Text></Text>
             </View>
         </ScrollView>
     )
@@ -43,17 +55,17 @@ const styles = StyleSheet.create({
     root: {
         backgroundColor: '#ffff',
         alignItems: 'center',
+        paddingHorizontal: 30,
     },
     logo: {
         height: 250,
-        width: '100%',
+        width: 500,
     },
     sendText: {
         fontSize: 30,
         fontWeight: 800,
         color: '#424106',
         alignSelf: 'flex-start',
-        marginLeft: 30,
         marginVertical: 10,
     },
     signUpSocial: {
@@ -69,7 +81,6 @@ const styles = StyleSheet.create({
         fontSize: 15,
         alignSelf: 'flex-start',
         fontWeight: 700,
-        marginLeft: 30,
         marginVertical: 15,
     },
     description: {
