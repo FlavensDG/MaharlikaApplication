@@ -43,8 +43,8 @@ const CartProductItem = ({cartItem}: CartProductItemProps) => {
                             )}
                             <Text>{item.ratings}</Text>
                         </View>
-                        <Text style={styles.price}>${item.price}
-                            {item.oldPrice && (<Text style={styles.oldPrice}> ${item.oldPrice}</Text>)}
+                        <Text style={styles.price}>₱{item.price}
+                            {item.oldPrice && (<Text style={styles.oldPrice}> ₱{item.oldPrice}</Text>)}
                         </Text>
                     </View>
                 </View>

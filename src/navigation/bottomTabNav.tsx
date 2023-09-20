@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import HomeStack from "./homeStack";
 import ShoppingCartStack from "./shoppingCartStack";
+import { ProfileScreen } from "../screens/ProfileScreen/ProfileScreen";
 
 import Entypo from 'react-native-vector-icons/Entypo';
 
@@ -28,7 +29,7 @@ const BottomTabNav = () => {
                 />
                 <Tab.Screen 
                     name = 'Profile' 
-                    component={HomeStack} 
+                    component={ProfileScreen} 
                     options={{
                         tabBarIcon: ({color}) => (
                             <Entypo name = 'user' color={color} size={25}/>
@@ -39,6 +40,7 @@ const BottomTabNav = () => {
                     name = 'Shopping Cart' 
                     component={ShoppingCartStack} 
                     options={{
+                        headerShown: false,
                         tabBarIcon: ({color}) => (
                             <Entypo name = 'shopping-cart' color={color} size={25}/>
                         ), 

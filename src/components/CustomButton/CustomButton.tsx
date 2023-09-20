@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     containerRectangle: {
         backgroundColor: '#424106',
         height: 45,
-        width: 320,
+        width: '100%',
 
         marginVertical: 10,
         justifyContent: 'center',

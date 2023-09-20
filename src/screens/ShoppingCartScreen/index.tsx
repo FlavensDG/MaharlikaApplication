@@ -20,7 +20,7 @@ const ShoppingCartScreen = () => {
         <ScrollView style={styles.page}>
             <View>
                 <Text style={{fontSize: 15}}>Subtotal ({products.length} items):{' '} 
-                    <Text style={{color: '#424106', fontWeight: 'bold'}}>${totalPrice.toFixed(2)}</Text>
+                    <Text style={{color: '#424106', fontWeight: 'bold'}}>₱{totalPrice.toFixed(2)}</Text>
                 </Text>
             </View>
             <View style={styles.checkoutButton}>

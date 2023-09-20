@@ -140,8 +140,8 @@ const styles = StyleSheet.create({
     },
     root2: {
         backgroundColor: '#ffff',
-        alignItems: 'center',
         justifyContent: 'center',
+        padding: 15,
     },
     logo: {
         alignSelf: 'center',

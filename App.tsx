@@ -29,7 +29,7 @@ const tokenCache = {
   },
 };
 
-const SignOut = () => {
+export const SignOut = () => {
   const { isLoaded,signOut } = useAuth();
   if (!isLoaded) {
     return null;

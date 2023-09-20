@@ -3,8 +3,11 @@ import { View, Text, StyleSheet, TextInput, Alert, ScrollView } from 'react-nati
 import { Picker } from '@react-native-picker/picker';
 import CustomInput from '../../components/CustomInput';
 import { SemiRectangleButton } from '../../components/CustomButton/CustomButton';
+import { useNavigation } from '@react-navigation/native';
+import {ThankYouScreen} from '../ThankYouScreen/ThankYouScreen';
 
 const AddressScreen = () => {
+    const navigation = useNavigation();
     const [country, setCountry] = useState();
     const [fullName, setFullName] = useState('');
     const [phone, setPhone] = useState('');
@@ -47,7 +50,7 @@ const AddressScreen = () => {
             Alert.alert('Please enter your zip code');
             return;
         }
-        console.warn('Success. Checking Out')
+        navigation.navigate('Thank You')
     }
 
     return(

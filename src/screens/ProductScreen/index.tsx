@@ -30,8 +30,8 @@ const ProductScreen = () => {
             </Picker> 
 
             { /* Price */ }
-            <Text style={styles.price}>${product.price}
-                {product.oldPrice && (<Text style={styles.oldPrice}> ${product.oldPrice}</Text>)}
+            <Text style={styles.price}>₱{product.price}
+                {product.oldPrice && (<Text style={styles.oldPrice}> ₱{product.oldPrice}</Text>)}
             </Text>
 
             { /* Description */ }

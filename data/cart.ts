@@ -1,42 +1,15 @@
 export default [
   {
-    id: '1',
+    id: '10',
     quantity: 1,
     item: {
-      id: '1',
-      title: "Clean Architecture: A Craftsman's Guide to Software Structure and Design",
-      image: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/products/cleanarchitecture.jpg',
-      avgRating: 4.2,
-      ratings: 1325,
-      price: 20.98,
-      oldPrice: 24.06,
-    }
-  },
-  {
-    id: '2',
-    quantity: 2,
-    item: {
-      id: '2',
-      title: "Clean Code: A Handbook of Agile Software Craftsmanship",
-      image: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/products/cleancode.jpg',
+      id: '10',
+      title: "Barong Tagalog",
+      image: 'https://uecpcjmcpnafqrockzcp.supabase.co/storage/v1/object/sign/Dummy/product_images/Barong.jpeg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJEdW1teS9wcm9kdWN0X2ltYWdlcy9CYXJvbmcuanBlZyIsImlhdCI6MTY4ODcxODM5MCwiZXhwIjoxNzIwMjU0MzkwfQ.QeTOnPM7yu55uCoWrIN8Qgb9HsrJb6zreCKob3HaSLA&t=2023-07-07T08%3A26%3A31.037Z',
       avgRating: 4.8,
       ratings: 2989,
-      price: 32.98,
-      oldPrice: 34.06,
+      price: 699,
+      oldPrice: 750,
     }
   },
-  {
-    id: '3',
-    quantity: 1,
-    option: 'Space Grey',
-    item: {
-      id: '5',
-      title: "Mouse Havit Mechanical Keyboard Wired 89 Keys Gaming Keyboard",
-      image: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/products/mouse2.jpg',
-      avgRating: 4.8,
-      ratings: 2989,
-      price: 99.98,
-      oldPrice: 120.06,
-    }
-  },
-];
+]
